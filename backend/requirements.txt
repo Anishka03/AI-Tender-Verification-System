@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+sqlalchemy
+pymysql
+python-dotenv
+python-multipart
+pydantic
+passlib[bcrypt]
+python-jose
+pymupdf
+pytesseract
+pillow
+scikit-learn
+reportlab
