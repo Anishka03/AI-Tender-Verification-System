@@ -1,17 +1,19 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import declarative_base, sessionmaker
 
-DATABASE_URL = "mysql+pymysql://root:root%40123@localhost:3306/tender_verification"
+from app.core.config import settings
+
 
 engine = create_engine(
-    DATABASE_URL,
-    echo=True
+    settings.DATABASE_URL,
+    pool_pre_ping=True,
+    echo=settings.DEBUG,
 )
 
 SessionLocal = sessionmaker(
     autocommit=False,
     autoflush=False,
-    bind=engine
+    bind=engine,
 )
 
 Base = declarative_base()
